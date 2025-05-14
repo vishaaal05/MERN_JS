@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Welcome!</h1>
+    <div> <label for="name">Name:</label><input id="name" type="text"></div>
+    <div><label for="time">Time of Day</label></div>
+    <div>
+        <select name="" id="time">
+            <option value="">select</option>
+            <option value="Morning">Morning</option>
+            <option value="Afternoon">Afternoon</option>
+            <option value="Evening">Evening</option>
+        </select>
+    </div>
+    <div><p id="message"></p></div>
+    <div>
+        <button onclick="greetMe()">Greet Me</button>
+    </div>
+  <script>
+    function greetMe(){
+        const name = document.getElementById("name").value;
+        const time = document.getElementById("time").value;
+        const messageElement = document.getElementById("message");
+
+        if(!name || !time){
+            messageElement.innerHTML = "Please fill all the details";
+        }else{
+            messageElement.innerHTML = `Good ${time}, ${name}`
+        }
+        document.getElementById("message").innerHTML = `Good ${time} ${name}`;
+        // const 
+        console.log(name);
+
+        alert(`Good ${time}, ${name}`)
+    }
+  </script>
+</body>
+</html>
